@@ -1,0 +1,81 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "user@example.com",
+            "password": "password123!",
+            "name": "Demo User",
+            "role": "user"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Basic Tee",
+            "price": 35000,
+            "category": "clothing",
+            "image": "https://via.placeholder.com/300x400?text=Basic+Tee",
+            "stock": 50,
+            "options": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Denim Jacket",
+            "price": 120000,
+            "category": "clothing",
+            "image": "https://via.placeholder.com/300x400?text=Denim+Jacket",
+            "stock": 20,
+            "options": [
+                "M",
+                "L"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Canvas Sneakers",
+            "price": 89000,
+            "category": "footwear",
+            "image": "https://via.placeholder.com/300x400?text=Canvas+Sneakers",
+            "stock": 15,
+            "options": [
+                "240",
+                "250",
+                "260",
+                "270",
+                "280"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Leather Wallet",
+            "price": 45000,
+            "category": "accessories",
+            "image": "https://via.placeholder.com/300x400?text=Leather+Wallet",
+            "stock": 100,
+            "options": [
+                "Black",
+                "Brown"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Wool Scarf",
+            "price": 29000,
+            "category": "accessories",
+            "image": "https://via.placeholder.com/300x400?text=Wool+Scarf",
+            "stock": 0,
+            "options": [
+                "Red",
+                "Blue",
+                "Gray"
+            ]
+        }
+    ],
+    "cart": [],
+    "orders": []
+}
