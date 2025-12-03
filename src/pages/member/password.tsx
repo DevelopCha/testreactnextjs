@@ -1,12 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { useAuthStore } from '../../store/useAuthStore';
 import { usePasswordChange } from '../../hooks/usePasswordChange';
 
 const PasswordChange = () => {
     const router = useRouter();
-    const userType = useAuthStore((state) => state.userType);
-    const { register, handleSubmit, errors, isValid, isSubmitting } = usePasswordChange();
+    const { register, handleSubmit, errors, isValid, isSubmitting, userType } = usePasswordChange();
 
     return (
         <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
@@ -73,8 +71,8 @@ const PasswordChange = () => {
                         type="submit"
                         disabled={!isValid || isSubmitting}
                         className={`flex-1 py-2 px-4 rounded-md text-white font-medium transition-colors ${!isValid || isSubmitting
-                                ? 'bg-blue-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700'
+                            ? 'bg-blue-400 cursor-not-allowed'
+                            : 'bg-blue-600 hover:bg-blue-700'
                             }`}
                     >
                         {isSubmitting ? '변경 중...' : '변경하기'}

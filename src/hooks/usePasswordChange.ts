@@ -3,6 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
 import { mypageService } from '../api/mypageService';
+import { useAuthStore } from '../store/useAuthStore';
 
 // Validation Schema
 const passwordSchema = z.object({
@@ -25,6 +26,8 @@ const passwordSchema = z.object({
 export type PasswordFormValues = z.infer<typeof passwordSchema>;
 
 export const usePasswordChange = () => {
+    const userType = useAuthStore((state) => state.userType); // Retrieve inside hook
+
     const {
         register,
         handleSubmit,
@@ -37,6 +40,7 @@ export const usePasswordChange = () => {
 
     const changePasswordMutation = useMutation({
         mutationFn: (data: PasswordFormValues) =>
+            // userType can be used here if API requires it
             mypageService.changePassword(data.currentPassword, data.newPassword),
         onSuccess: () => {
             alert('비밀번호가 성공적으로 변경되었습니다.');
@@ -52,6 +56,7 @@ export const usePasswordChange = () => {
     };
 
     return {
+        userType, // Return for UI display
         register,
         handleSubmit: handleSubmit(onSubmit),
         errors,
